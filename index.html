@@ -33,7 +33,6 @@
       overflow: hidden;
     }
 
-    /* ── 헤더 ── */
     header {
       display: flex;
       align-items: center;
@@ -62,12 +61,7 @@
       margin-left: auto;
     }
 
-    /* ── 메인 레이아웃 ── */
-    .main {
-      display: flex;
-      flex: 1;
-      overflow: hidden;
-    }
+    .main { display: flex; flex: 1; overflow: hidden; }
 
     /* ── 왼쪽 패널 ── */
     .sidebar {
@@ -83,8 +77,8 @@
     .search-area {
       padding: 20px;
       border-bottom: 1px solid var(--border);
+      flex-shrink: 0;
     }
-
     .search-label {
       font-size: 11px;
       font-weight: 700;
@@ -93,13 +87,7 @@
       text-transform: uppercase;
       margin-bottom: 10px;
     }
-
-    .search-box {
-      display: flex;
-      gap: 8px;
-      align-items: center;
-    }
-
+    .search-box { display: flex; gap: 8px; align-items: center; }
     .search-input {
       flex: 1;
       background: var(--card);
@@ -117,7 +105,6 @@
       border-color: var(--accent);
       box-shadow: 0 0 0 3px rgba(255,222,0,0.1);
     }
-
     .search-btn {
       background: var(--accent);
       color: #111;
@@ -134,13 +121,7 @@
     .search-btn:hover { background: #ffe94d; }
     .search-btn:active { transform: scale(0.96); }
 
-    /* 빠른 검색 태그 */
-    .quick-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 12px;
-    }
+    .quick-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
     .tag {
       font-size: 12px;
       padding: 4px 12px;
@@ -151,141 +132,24 @@
       cursor: pointer;
       transition: background 0.15s, border-color 0.15s, color 0.15s;
     }
-    .tag:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-      background: rgba(255,222,0,0.06);
-    }
+    .tag:hover { border-color: var(--accent); color: var(--accent); background: rgba(255,222,0,0.06); }
 
-    /* ── 레이어 토글 패널 ── */
-    .layer-panel {
-      padding: 14px 20px;
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .layer-label {
-      font-size: 11px;
-      font-weight: 700;
-      color: var(--text-muted);
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-    }
-    .toggle-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-    }
-    .toggle-info {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-    .toggle-title {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--text-primary);
-    }
-    .toggle-desc {
-      font-size: 11px;
-      color: var(--text-muted);
-    }
-
-    /* 토글 스위치 */
-    .toggle-switch {
-      position: relative;
-      width: 44px;
-      height: 24px;
-      flex-shrink: 0;
-    }
-    .toggle-switch input { display: none; }
-    .toggle-track {
-      position: absolute;
-      inset: 0;
-      background: var(--border);
-      border-radius: 99px;
-      cursor: pointer;
-      transition: background 0.25s;
-    }
-    .toggle-track::after {
-      content: '';
-      position: absolute;
-      top: 3px;
-      left: 3px;
-      width: 18px;
-      height: 18px;
-      background: var(--text-muted);
-      border-radius: 50%;
-      transition: transform 0.25s, background 0.25s;
-    }
-    .toggle-switch input:checked + .toggle-track {
-      background: rgba(255,222,0,0.25);
-      border: 1px solid rgba(255,222,0,0.4);
-    }
-    .toggle-switch input:checked + .toggle-track::after {
-      transform: translateX(20px);
-      background: var(--accent);
-    }
-
-    /* 반경 슬라이더 */
-    .radius-row {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-top: 2px;
-    }
-    .radius-slider {
-      flex: 1;
-      -webkit-appearance: none;
-      height: 4px;
-      border-radius: 99px;
-      background: var(--border);
-      outline: none;
-      cursor: pointer;
-    }
-    .radius-slider::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      width: 16px;
-      height: 16px;
-      border-radius: 50%;
-      background: var(--accent);
-      cursor: pointer;
-      box-shadow: 0 0 0 3px rgba(255,222,0,0.15);
-    }
-    .radius-value {
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--accent);
-      min-width: 52px;
-      text-align: right;
-    }
-
-    /* 결과 영역 */
+    /* 결과 헤더 */
     .result-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 14px 20px 10px;
+      flex-shrink: 0;
     }
-    .result-title {
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--text-muted);
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
-    }
-    .result-count {
-      font-size: 12px;
-      color: var(--accent);
-      font-weight: 700;
-    }
+    .result-title { font-size: 12px; font-weight: 700; color: var(--text-muted); letter-spacing: 1.2px; text-transform: uppercase; }
+    .result-count { font-size: 12px; color: var(--accent); font-weight: 700; }
 
+    /* 결과 리스트 */
     .result-list {
       flex: 1;
       overflow-y: auto;
-      padding: 0 12px 12px;
+      padding: 0 12px 8px;
       display: flex;
       flex-direction: column;
       gap: 8px;
@@ -293,6 +157,33 @@
     .result-list::-webkit-scrollbar { width: 4px; }
     .result-list::-webkit-scrollbar-track { background: transparent; }
     .result-list::-webkit-scrollbar-thumb { background: var(--border); border-radius: 99px; }
+
+    /* ── 페이지네이션 버튼 ── */
+    .pagination {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 16px 14px;
+      border-top: 1px solid var(--border);
+    }
+    .page-btn {
+      background: var(--card);
+      border: 1.5px solid var(--border);
+      color: var(--text-secondary);
+      border-radius: 8px;
+      padding: 6px 14px;
+      font-family: 'Noto Sans KR', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.15s, border-color 0.15s, color 0.15s;
+    }
+    .page-btn:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); background: rgba(255,222,0,0.06); }
+    .page-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+    .page-btn.active { border-color: var(--accent); color: var(--accent); background: rgba(255,222,0,0.1); }
+    .page-info { font-size: 12px; color: var(--text-muted); }
 
     /* 플레이스 카드 */
     .place-card {
@@ -304,6 +195,7 @@
       transition: background 0.15s, border-color 0.15s, transform 0.15s;
       position: relative;
       overflow: hidden;
+      flex-shrink: 0;
     }
     .place-card::before {
       content: '';
@@ -315,30 +207,13 @@
       opacity: 0;
       transition: opacity 0.2s;
     }
-    .place-card:hover {
-      background: var(--card-hover);
-      border-color: rgba(255,222,0,0.3);
-      transform: translateX(3px);
-    }
+    .place-card:hover { background: var(--card-hover); border-color: rgba(255,222,0,0.3); transform: translateX(3px); }
     .place-card:hover::before { opacity: 1; }
-    .place-card.active {
-      border-color: var(--accent);
-      background: rgba(255,222,0,0.06);
-    }
+    .place-card.active { border-color: var(--accent); background: rgba(255,222,0,0.06); }
     .place-card.active::before { opacity: 1; }
 
-    .card-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 8px;
-      margin-bottom: 6px;
-    }
-    .card-name-row {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
+    .card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; margin-bottom: 6px; }
+    .card-name-row { display: flex; align-items: center; gap: 8px; }
     .card-emoji { font-size: 18px; line-height: 1; flex-shrink: 0; }
     .place-name { font-weight: 700; font-size: 14px; color: var(--text-primary); line-height: 1.3; }
     .place-category {
@@ -354,7 +229,6 @@
     .place-addr { font-size: 12px; color: var(--text-secondary); margin-bottom: 4px; padding-left: 26px; }
     .place-dist { font-size: 11px; color: var(--text-muted); padding-left: 26px; }
 
-    /* 빈 상태 */
     .empty-state {
       flex: 1;
       display: flex;
@@ -369,11 +243,11 @@
     .empty-icon { font-size: 48px; opacity: 0.4; }
     .empty-text { font-size: 14px; line-height: 1.6; }
 
-    /* ── 오른쪽: 지도 ── */
+    /* ── 오른쪽 지도 ── */
     .map-wrap { flex: 1; position: relative; background: var(--bg); }
     #map { width: 100%; height: 100%; }
 
-    /* 지도 위 버튼 */
+    /* ── 지도 위 플로팅 컨트롤 ── */
     .map-controls {
       position: absolute;
       top: 16px;
@@ -393,13 +267,59 @@
       font-size: 12px;
       font-weight: 500;
       cursor: pointer;
-      transition: background 0.15s, border-color 0.15s;
+      transition: background 0.15s, border-color 0.15s, color 0.15s;
       box-shadow: var(--shadow);
       white-space: nowrap;
+      text-align: left;
     }
     .map-btn:hover { background: var(--card-hover); border-color: var(--accent); color: var(--accent); }
+    /* 토글 ON 상태 */
+    .map-btn.on {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: rgba(255,222,0,0.08);
+    }
+    .map-btn.on.purple {
+      border-color: #c084fc;
+      color: #c084fc;
+      background: rgba(192,132,252,0.08);
+    }
 
-    /* 로딩 오버레이 */
+    /* 반경 슬라이더 (원 ON일 때만 표시) */
+    .radius-popup {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px 14px;
+      box-shadow: var(--shadow);
+      display: none;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .radius-popup.visible { display: flex; }
+    .radius-popup-label { font-size: 11px; color: var(--text-muted); }
+    .radius-row { display: flex; align-items: center; gap: 8px; }
+    .radius-slider {
+      flex: 1;
+      -webkit-appearance: none;
+      height: 4px;
+      border-radius: 99px;
+      background: var(--border);
+      outline: none;
+      cursor: pointer;
+      min-width: 100px;
+    }
+    .radius-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 16px; height: 16px;
+      border-radius: 50%;
+      background: var(--accent);
+      cursor: pointer;
+      box-shadow: 0 0 0 3px rgba(255,222,0,0.15);
+    }
+    .radius-value { font-size: 12px; font-weight: 700; color: var(--accent); min-width: 46px; text-align: right; }
+
+    /* 로딩 */
     .loading-overlay {
       position: absolute; inset: 0;
       background: var(--bg);
@@ -428,7 +348,7 @@
     .emoji-marker:hover { transform: scale(1.25); }
     .emoji-marker.active { transform: scale(1.35); }
 
-    /* 커스텀 팝업 */
+    /* 팝업 */
     .info-popup {
       background: var(--panel);
       border: 1.5px solid var(--accent);
@@ -462,8 +382,7 @@
 
 <div class="main">
   <div class="sidebar">
-
-    <!-- 검색 영역 -->
+    <!-- 검색 -->
     <div class="search-area">
       <div class="search-label">장소 검색</div>
       <div class="search-box">
@@ -480,41 +399,7 @@
       </div>
     </div>
 
-    <!-- 레이어 ON/OFF 패널 -->
-    <div class="layer-panel">
-      <div class="search-label">레이어 설정</div>
-
-      <!-- 반경 원 토글 -->
-      <div class="toggle-row">
-        <div class="toggle-info">
-          <div class="toggle-title">🔵 내 위치 반경 원</div>
-          <div class="toggle-desc">현재 위치 기준 반경 표시</div>
-        </div>
-        <label class="toggle-switch">
-          <input type="checkbox" id="circleToggle" />
-          <span class="toggle-track"></span>
-        </label>
-      </div>
-      <!-- 반경 슬라이더 (원 ON일 때만 활성화) -->
-      <div class="radius-row" id="radiusRow" style="opacity:0.3; pointer-events:none;">
-        <input type="range" class="radius-slider" id="radiusSlider" min="100" max="2000" step="100" value="500" />
-        <span class="radius-value" id="radiusValue">500m</span>
-      </div>
-
-      <!-- 홍대 다각형 토글 -->
-      <div class="toggle-row">
-        <div class="toggle-info">
-          <div class="toggle-title">🟣 홍대 거리 구역</div>
-          <div class="toggle-desc">홍대 문화예술 거리 범위</div>
-        </div>
-        <label class="toggle-switch">
-          <input type="checkbox" id="polygonToggle" />
-          <span class="toggle-track"></span>
-        </label>
-      </div>
-    </div>
-
-    <!-- 결과 리스트 -->
+    <!-- 결과 -->
     <div class="result-header">
       <div class="result-title">검색 결과</div>
       <div class="result-count" id="resultCount"></div>
@@ -525,17 +410,43 @@
         <div class="empty-text">키워드나 태그를 눌러<br>주변 장소를 찾아보세요</div>
       </div>
     </div>
+
+    <!-- 페이지네이션 -->
+    <div class="pagination" id="pagination" style="display:none;">
+      <button class="page-btn" id="prevBtn">← 이전</button>
+      <span class="page-info" id="pageInfo"></span>
+      <button class="page-btn" id="nextBtn">다음 →</button>
+    </div>
   </div>
 
   <!-- 지도 -->
   <div class="map-wrap">
     <div id="map"></div>
+
     <div class="loading-overlay" id="loadingOverlay">
       <div class="spinner"></div>
       <div class="loading-text">지도를 불러오는 중...</div>
     </div>
+
+    <!-- ── 지도 위 플로팅 컨트롤 ── -->
     <div class="map-controls">
+      <!-- 내 위치 -->
       <button class="map-btn" id="myLocationBtn">📍 내 위치</button>
+
+      <!-- 반경 원 토글 -->
+      <button class="map-btn" id="circleBtn">🔵 반경 원 OFF</button>
+
+      <!-- 반경 슬라이더 (원 ON일 때만 표시) -->
+      <div class="radius-popup" id="radiusPopup">
+        <div class="radius-popup-label">반경 조절</div>
+        <div class="radius-row">
+          <input type="range" class="radius-slider" id="radiusSlider" min="100" max="2000" step="100" value="500" />
+          <span class="radius-value" id="radiusValue">500m</span>
+        </div>
+      </div>
+
+      <!-- 홍대 구역 토글 -->
+      <button class="map-btn" id="polygonBtn">🟣 홍대 구역 OFF</button>
     </div>
   </div>
 </div>
@@ -545,35 +456,30 @@
 // ── 전역 변수 ────────────────────────────────────────────
 let map = null;
 let myMarker = null;
-let myLat = 37.5665;   // 현재 위치 위도 (기본값: 서울시청)
-let myLng = 126.9780;  // 현재 위치 경도
+let myLat = 37.5665;
+let myLng = 126.9780;
 
-let customOverlays = [];  // 이모지 마커
-let infoOverlays = [];    // 팝업
+let customOverlays = [];
+let infoOverlays = [];
 let activeOverlayIndex = -1;
 
-// ── 레이어 객체 ──────────────────────────────────────────
-let radiusCircle = null;   // 반경 원
-let hongdaePolygon = null; // 홍대 다각형
-
-// ── 현재 반경값 (미터) ───────────────────────────────────
+// 레이어
+let radiusCircle = null;
+let hongdaePolygon = null;
+let isCircleOn = false;
+let isPolygonOn = false;
 let currentRadius = 500;
 
-// ── 홍대 거리 다각형 좌표 ────────────────────────────────
-// 홍대입구역 ~ 홍대 걷고싶은거리 ~ 상상마당 ~ 홍대 클럽거리 일대
-const HONGDAE_PATH = [
-  new kakao.maps.LatLng(37.5580, 126.9218),
-  new kakao.maps.LatLng(37.5555, 126.9210),
-  new kakao.maps.LatLng(37.5540, 126.9230),
-  new kakao.maps.LatLng(37.5535, 126.9255),
-  new kakao.maps.LatLng(37.5545, 126.9275),
-  new kakao.maps.LatLng(37.5560, 126.9280),
-  new kakao.maps.LatLng(37.5575, 126.9268),
-  new kakao.maps.LatLng(37.5590, 126.9250),
-  new kakao.maps.LatLng(37.5590, 126.9230),
-];
+// 페이지네이션
+let currentKeyword = '';
+let currentPage = 1;
+let totalCount = 0;
+let isLastPage = false;
 
-// ── 카테고리 → 이모지 매핑 ──────────────────────────────
+// 홍대 좌표 (kakao.maps.load 안에서 채워짐)
+const HONGDAE_PATH = [];
+
+// ── 카테고리 → 이모지 ────────────────────────────────────
 const CATEGORY_EMOJI_MAP = [
   { keywords: ['카페', '커피', '베이커리', '디저트', '브런치'], emoji: '☕' },
   { keywords: ['미술관', '갤러리', '전시'],                      emoji: '🖼️' },
@@ -594,40 +500,34 @@ function getEmoji(placeName, categoryName) {
 
 // ── 지도 초기화 ──────────────────────────────────────────
 function initMap(lat, lng) {
-  myLat = lat;
-  myLng = lng;
-
-  const container = document.getElementById('map');
-  map = new kakao.maps.Map(container, {
+  myLat = lat; myLng = lng;
+  map = new kakao.maps.Map(document.getElementById('map'), {
     center: new kakao.maps.LatLng(lat, lng),
     level: 5
   });
-
   placeMyMarker(lat, lng);
   document.getElementById('loadingOverlay').classList.add('hidden');
 }
 
-// ── 현재 위치 마커 ───────────────────────────────────────
 function placeMyMarker(lat, lng) {
   if (myMarker) myMarker.setMap(null);
-  const position = new kakao.maps.LatLng(lat, lng);
-  const markerImage = new kakao.maps.MarkerImage(
-    'https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png',
-    new kakao.maps.Size(24, 35)
-  );
-  myMarker = new kakao.maps.Marker({ position, map, title: '내 위치', image: markerImage });
+  myMarker = new kakao.maps.Marker({
+    position: new kakao.maps.LatLng(lat, lng),
+    map,
+    title: '내 위치',
+    image: new kakao.maps.MarkerImage(
+      'https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png',
+      new kakao.maps.Size(24, 35)
+    )
+  });
 }
 
-// ════════════════════════════════════════════════════════
-// ── 반경 원 그리기 / 제거 ────────────────────────────────
-// ════════════════════════════════════════════════════════
+// ── 반경 원 ──────────────────────────────────────────────
 function drawCircle(radius) {
-  // 기존 원이 있으면 먼저 지우기
   if (radiusCircle) radiusCircle.setMap(null);
-
   radiusCircle = new kakao.maps.Circle({
     center: new kakao.maps.LatLng(myLat, myLng),
-    radius: radius,
+    radius,
     strokeWeight: 2,
     strokeColor: '#ffde00',
     strokeOpacity: 0.9,
@@ -639,22 +539,16 @@ function drawCircle(radius) {
 }
 
 function removeCircle() {
-  if (radiusCircle) {
-    radiusCircle.setMap(null);
-    radiusCircle = null;
-  }
+  if (radiusCircle) { radiusCircle.setMap(null); radiusCircle = null; }
 }
 
-// ════════════════════════════════════════════════════════
-// ── 홍대 다각형 그리기 / 제거 ────────────────────────────
-// ════════════════════════════════════════════════════════
+// ── 홍대 다각형 ──────────────────────────────────────────
 function drawHongdaePolygon() {
   if (hongdaePolygon) hongdaePolygon.setMap(null);
-
   hongdaePolygon = new kakao.maps.Polygon({
     path: HONGDAE_PATH,
     strokeWeight: 2,
-    strokeColor: '#c084fc',   // 보라색 선
+    strokeColor: '#c084fc',
     strokeOpacity: 0.9,
     strokeStyle: 'solid',
     fillColor: '#c084fc',
@@ -664,13 +558,10 @@ function drawHongdaePolygon() {
 }
 
 function removeHongdaePolygon() {
-  if (hongdaePolygon) {
-    hongdaePolygon.setMap(null);
-    hongdaePolygon = null;
-  }
+  if (hongdaePolygon) { hongdaePolygon.setMap(null); hongdaePolygon = null; }
 }
 
-// ── 기존 검색 마커 전체 제거 ─────────────────────────────
+// ── 마커 초기화 ──────────────────────────────────────────
 function clearOverlays() {
   customOverlays.forEach(ov => ov.setMap(null));
   infoOverlays.forEach(ov => ov.setMap(null));
@@ -679,33 +570,50 @@ function clearOverlays() {
   activeOverlayIndex = -1;
 }
 
-// ── 장소 검색 ────────────────────────────────────────────
-function searchPlaces() {
+// ════════════════════════════════════════════════════════
+// ── 검색 (페이지 지정 가능) ──────────────────────────────
+// ════════════════════════════════════════════════════════
+function searchPlaces(page) {
   const keyword = document.getElementById('searchInput').value.trim();
   if (!keyword) { alert('검색어를 입력해주세요!'); return; }
 
+  // 새 키워드면 1페이지부터
+  if (keyword !== currentKeyword) {
+    currentKeyword = keyword;
+    page = 1;
+  }
+  currentPage = page || 1;
+
   const ps = new kakao.maps.services.Places();
-  ps.keywordSearch(keyword, function(data, status) {
+  // size: 한 페이지 결과 수 (최대 15), page: 페이지 번호 (최대 45페이지)
+  ps.keywordSearch(keyword, function(data, status, pagination) {
     if (status === kakao.maps.services.Status.OK) {
-      displayResults(data);
+      totalCount = pagination.totalCount;
+      isLastPage = pagination.last;
+      displayResults(data, pagination);
     } else if (status === kakao.maps.services.Status.ZERO_RESULT) {
       clearOverlays();
+      hidePagination();
       showEmpty('😅', '검색 결과가 없어요.<br>다른 키워드로 시도해보세요.');
       document.getElementById('resultCount').textContent = '';
     } else {
       showEmpty('⚠️', '검색 중 오류가 발생했어요.<br>잠시 후 다시 시도해보세요.');
     }
-  });
+  }, { size: 15, page: currentPage });
 }
 
 // ── 결과 표시 ────────────────────────────────────────────
-function displayResults(places) {
+function displayResults(places, pagination) {
   clearOverlays();
 
   const listEl = document.getElementById('resultList');
-  const countEl = document.getElementById('resultCount');
   listEl.innerHTML = '';
-  countEl.textContent = `${places.length}개`;
+
+  // 총 건수 표시 (현재 페이지 / 전체)
+  const startNum = (currentPage - 1) * 15 + 1;
+  const endNum = startNum + places.length - 1;
+  document.getElementById('resultCount').textContent =
+    `${startNum}–${endNum} / 총 ${pagination.totalCount}개`;
 
   const bounds = new kakao.maps.LatLngBounds();
 
@@ -741,10 +649,7 @@ function displayResults(places) {
     infoOverlay.setMap(null);
     infoOverlays.push(infoOverlay);
 
-    markerDiv.addEventListener('click', () => {
-      togglePopup(i);
-      setActiveCard(i);
-    });
+    markerDiv.addEventListener('click', () => { togglePopup(i); setActiveCard(i); });
 
     // 카드
     const distText = place.distance ? `📏 ${Number(place.distance).toLocaleString()}m` : '';
@@ -772,6 +677,30 @@ function displayResults(places) {
   });
 
   map.setBounds(bounds);
+  listEl.scrollTop = 0; // 페이지 이동 시 스크롤 맨 위로
+
+  // 페이지네이션 업데이트
+  updatePagination(pagination);
+}
+
+// ── 페이지네이션 UI 업데이트 ─────────────────────────────
+function updatePagination(pagination) {
+  const paginationEl = document.getElementById('pagination');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  const pageInfo = document.getElementById('pageInfo');
+
+  paginationEl.style.display = 'flex';
+  pageInfo.textContent = `${currentPage} / ${pagination.last ? currentPage : '?'}페이지`;
+
+  // 이전 버튼: 1페이지면 비활성화
+  prevBtn.disabled = currentPage === 1;
+  // 다음 버튼: 마지막 페이지면 비활성화
+  nextBtn.disabled = pagination.last;
+}
+
+function hidePagination() {
+  document.getElementById('pagination').style.display = 'none';
 }
 
 // ── 팝업 토글 ────────────────────────────────────────────
@@ -807,82 +736,92 @@ function showEmpty(icon, text) {
 }
 
 // ════════════════════════════════════════════════════════
-// ── 레이어 토글 이벤트 ───────────────────────────────────
+// ── 지도 위 플로팅 버튼 이벤트 ──────────────────────────
 // ════════════════════════════════════════════════════════
 
-// 반경 원 ON/OFF
-document.getElementById('circleToggle').addEventListener('change', function() {
-  const radiusRow = document.getElementById('radiusRow');
-  if (this.checked) {
-    // 슬라이더 활성화
-    radiusRow.style.opacity = '1';
-    radiusRow.style.pointerEvents = 'auto';
-    drawCircle(currentRadius);
-  } else {
-    // 슬라이더 비활성화
-    radiusRow.style.opacity = '0.3';
-    radiusRow.style.pointerEvents = 'none';
-    removeCircle();
-  }
-});
-
-// 반경 슬라이더 조절 → 원 실시간 업데이트
-document.getElementById('radiusSlider').addEventListener('input', function() {
-  currentRadius = Number(this.value);
-  document.getElementById('radiusValue').textContent = `${currentRadius}m`;
-  // 원이 켜져 있을 때만 다시 그리기
-  if (document.getElementById('circleToggle').checked) {
-    drawCircle(currentRadius);
-  }
-});
-
-// 홍대 다각형 ON/OFF
-document.getElementById('polygonToggle').addEventListener('change', function() {
-  if (this.checked) {
-    drawHongdaePolygon();
-    // 홍대 중심으로 지도 이동
-    map.setCenter(new kakao.maps.LatLng(37.5563, 126.9245));
-    map.setLevel(5);
-  } else {
-    removeHongdaePolygon();
-  }
-});
-
-// ── 내 위치 버튼 ─────────────────────────────────────────
+// 내 위치
 document.getElementById('myLocationBtn').addEventListener('click', () => {
   if (!navigator.geolocation) { alert('위치 정보를 지원하지 않는 브라우저예요.'); return; }
   navigator.geolocation.getCurrentPosition(
     pos => {
-      myLat = pos.coords.latitude;
-      myLng = pos.coords.longitude;
+      myLat = pos.coords.latitude; myLng = pos.coords.longitude;
       map.setCenter(new kakao.maps.LatLng(myLat, myLng));
       map.setLevel(5);
       placeMyMarker(myLat, myLng);
-      // 원이 켜져 있으면 내 위치 기준으로 다시 그리기
-      if (document.getElementById('circleToggle').checked) {
-        drawCircle(currentRadius);
-      }
+      // 원이 켜져 있으면 새 위치로 다시 그리기
+      if (isCircleOn) drawCircle(currentRadius);
     },
     () => alert('위치 정보를 가져올 수 없어요.')
   );
 });
 
-// ── 검색 이벤트 ──────────────────────────────────────────
-document.getElementById('searchBtn').addEventListener('click', searchPlaces);
+// 반경 원 버튼
+document.getElementById('circleBtn').addEventListener('click', () => {
+  const btn = document.getElementById('circleBtn');
+  const radiusPopup = document.getElementById('radiusPopup');
+  isCircleOn = !isCircleOn;
+
+  if (isCircleOn) {
+    btn.textContent = '🔵 반경 원 ON';
+    btn.classList.add('on');
+    radiusPopup.classList.add('visible');
+    drawCircle(currentRadius);
+  } else {
+    btn.textContent = '🔵 반경 원 OFF';
+    btn.classList.remove('on');
+    radiusPopup.classList.remove('visible');
+    removeCircle();
+  }
+});
+
+// 반경 슬라이더
+document.getElementById('radiusSlider').addEventListener('input', function() {
+  currentRadius = Number(this.value);
+  document.getElementById('radiusValue').textContent = `${currentRadius}m`;
+  if (isCircleOn) drawCircle(currentRadius);
+});
+
+// 홍대 구역 버튼
+document.getElementById('polygonBtn').addEventListener('click', () => {
+  const btn = document.getElementById('polygonBtn');
+  isPolygonOn = !isPolygonOn;
+
+  if (isPolygonOn) {
+    btn.textContent = '🟣 홍대 구역 ON';
+    btn.classList.add('on', 'purple');
+    drawHongdaePolygon();
+    map.setCenter(new kakao.maps.LatLng(37.5563, 126.9245));
+    map.setLevel(5);
+  } else {
+    btn.textContent = '🟣 홍대 구역 OFF';
+    btn.classList.remove('on', 'purple');
+    removeHongdaePolygon();
+  }
+});
+
+// ── 검색 버튼 / 엔터 / 태그 ─────────────────────────────
+document.getElementById('searchBtn').addEventListener('click', () => searchPlaces(1));
 document.getElementById('searchInput').addEventListener('keydown', e => {
-  if (e.key === 'Enter') searchPlaces();
+  if (e.key === 'Enter') searchPlaces(1);
 });
 document.querySelectorAll('.tag').forEach(tag => {
   tag.addEventListener('click', () => {
     document.getElementById('searchInput').value = tag.dataset.keyword;
-    searchPlaces();
+    searchPlaces(1);
   });
 });
 
-// ── SDK 로드 후 지도 초기화 ──────────────────────────────
+// ── 페이지 이전 / 다음 ───────────────────────────────────
+document.getElementById('prevBtn').addEventListener('click', () => {
+  if (currentPage > 1) searchPlaces(currentPage - 1);
+});
+document.getElementById('nextBtn').addEventListener('click', () => {
+  if (!isLastPage) searchPlaces(currentPage + 1);
+});
+
+// ── SDK 로드 후 초기화 ───────────────────────────────────
 kakao.maps.load(function() {
-  // HONGDAE_PATH는 kakao.maps.LatLng가 필요해서 load() 안에서 초기화해야 해
-  HONGDAE_PATH.length = 0;
+  // 홍대 좌표 초기화 (LatLng는 load 안에서만 사용 가능)
   [
     [37.5580, 126.9218], [37.5555, 126.9210], [37.5540, 126.9230],
     [37.5535, 126.9255], [37.5545, 126.9275], [37.5560, 126.9280],
